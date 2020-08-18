@@ -1,6 +1,6 @@
 let {createObservable} = require("./src/observable");
 let observe = require("./src/observe");
-let {raw} = require("./src/store");
+let {raw, isObservable} = require("./src/store");
 let {getHandler} = require("./src/handlers");
 
 function observable(target) {
@@ -35,5 +35,6 @@ function eachObjectOrFunctionProps(obj, handle, dep) {
 module.exports = {
   observable,
   observe,
-  raw
+  raw,
+  isObservable
 }

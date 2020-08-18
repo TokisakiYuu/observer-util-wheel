@@ -11,6 +11,10 @@ function raw(receiver) {
   return receiverToRaw.get(receiver);
 }
 
+function isObservable(object) {
+  return receiverToRaw.has(object);
+}
+
 function receiver(raw) {
   return rawToReceiver.get(raw);
 }
@@ -41,5 +45,6 @@ module.exports = {
   raw,
   receiver,
   storeReaction,
-  findReaction
+  findReaction,
+  isObservable
 }
