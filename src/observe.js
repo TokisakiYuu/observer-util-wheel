@@ -12,7 +12,7 @@ function observe(fn) {
   }
   const dependMap = new Map();
   function reaction() {
-    runAsReaction(fn, reaction);
+    return runAsReaction(fn, reaction);
   }
   // init reaction mate
   let reactionMate = pureObject();

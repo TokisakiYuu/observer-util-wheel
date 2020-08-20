@@ -2,8 +2,9 @@ const runningReactionStack = [];
 
 function runAsReaction(fn, reaction) {
   runningReactionStack.push(reaction);
-  fn();
+  let result = fn();
   runningReactionStack.pop();
+  return result;
 }
 
 function getStackHead() {
